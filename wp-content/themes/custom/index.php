@@ -13,6 +13,14 @@
  */
 
 get_header();
+// get_header(); //we can call innner header like
+// get_header('inner')
+/*
+on the same way we can create multiple footer
+like get_footer('footer name after -')
+assume that we have created a footer with name with footer-xyz
+so we have to call that footer like get_footer('xyz)
+*/
 ?>
 
 
