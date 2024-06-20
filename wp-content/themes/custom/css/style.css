@@ -438,3 +438,7 @@
 .logo {
     float: left;
 }
+
+.current_page_item a {
+    color: #181d38;
+}

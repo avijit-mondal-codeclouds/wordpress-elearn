@@ -8,7 +8,6 @@
  *
  * @package custom
  */
-
 ?>
 <!-- <!doctype html>
 <html <?php //language_attributes(); ?>>
@@ -69,7 +68,9 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" rel="icon">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +80,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <?php wp_head(); ?>
     <!-- Libraries Stylesheet -->
     <link href="<?php echo get_template_directory_uri(); ?>/lib/animate/animate.min.css" rel="stylesheet">
     <link href="<?php echo get_template_directory_uri(); ?>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -119,6 +120,7 @@
                 'menu_class' => 'navbar-nav'
             ]); ?> -->
             <?php echo wp_nav_menu([
+                'container_class' => 'navbar-nav ms-auto p-4 p-lg-0', // Unique class for the container
                 'theme_location' => 'Primary-menu',
                 'menu_class' => 'navbar-nav',
                 'add_li_class' => 'nav-item nav-link' // Custom class for <li> elements
@@ -137,7 +139,7 @@
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div> -->
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>
     <!-- Navbar End -->

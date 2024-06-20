@@ -43,7 +43,7 @@ get_header();
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="<?php echo site_url(); ?>">Home</a></li>
                             <!-- <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li> -->
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><?php echo the_title();?></li>
                         </ol>
                     </nav>
                 </div>
