@@ -61,12 +61,12 @@ if ( ! defined( '_S_VERSION' ) ) {
 // 		*/
 // 	add_theme_support( 'title-tag' );
 
-// 	/*
-// 		* Enable support for Post Thumbnails on posts and pages.
-// 		*
-// 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-// 		*/
-// 	add_theme_support( 'post-thumbnails' );
+	/*
+		* Enable support for Post Thumbnails on posts and pages.
+		*
+		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		*/
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	/*
@@ -107,17 +107,18 @@ if ( ! defined( '_S_VERSION' ) ) {
 // 		)
 // 	);
 
-// 	// Set up the WordPress core custom background feature.
-// 	add_theme_support(
-// 		'custom-background',
-// 		apply_filters(
-// 			'custom_custom_background_args',
-// 			array(
-// 				'default-color' => 'ffffff',
-// 				'default-image' => '',
-// 			)
-// 		)
-// 	);
+	// Set up the WordPress core custom background feature.
+	//enable feature image option on admin panel
+	// add_theme_support(
+	// 	'custom-background',
+	// 	apply_filters(
+	// 		'custom_custom_background_args',
+	// 		array(
+	// 			'default-color' => 'ffffff',
+	// 			'default-image' => '',
+	// 		)
+	// 	)
+	// );
 
 // 	// Add theme support for selective refresh for widgets.
 // 	add_theme_support( 'customize-selective-refresh-widgets' );
