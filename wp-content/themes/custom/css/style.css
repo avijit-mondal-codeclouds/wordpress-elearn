@@ -434,3 +434,7 @@
     padding-right: 0;
     border-right: none;
 }
+
+.logo {
+    float: left;
+}

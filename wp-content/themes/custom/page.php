@@ -51,7 +51,15 @@ get_header();
         </div>
     </div>
     <!-- Header End -->
-
+	<?php 
+	/*
+	if we use the_post_thumbnail() method then it will give us image with image tag
+	*/
+	the_post_thumbnail(); ?>
+	<?php 
+	// $postImg = wp_get_attachment_image(get_post_thumbnail_id(), 'medium');
+	// print_r($postImg);
+	?>
 	<?php the_content() ; ?>
 
 <?php

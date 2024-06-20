@@ -50,6 +50,23 @@ if ( ! defined( '_S_VERSION' ) ) {
 // 		*/
 // 	load_theme_textdomain( 'custom', get_template_directory() . '/languages' );
 
+// $args = array(
+// 	'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
+// 	'default-text-color' => '000',
+// 	'width'              => 1000,
+// 	'height'             => 250,
+// 	'flex-width'         => true,
+// 	'flex-height'        => true,
+// );
+// add_theme_support( 'custom-header', $args ); 
+/*
+we can pass the array in custom-header ^^
+*/
+/*
+Custom headers allow site owners to upload their own “title” image to their site, which can be placed at the top of certain pages.
+*/
+add_theme_support( 'custom-header', [] );
+
 // 	// Add default posts and comments RSS feed links to head.
 // 	add_theme_support( 'automatic-feed-links' );
 
