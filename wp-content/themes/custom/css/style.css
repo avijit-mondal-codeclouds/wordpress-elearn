@@ -544,5 +544,48 @@
     background-color: #f0f0f0;
 }
 
+.position-relative.h-100 {
+    position: relative; /* Ensure relative positioning */
+    height: 100%; /* Occupy full height of its container */
+}
+
+#secondary {
+    background-color: #f8f9fa; /* Background color */
+    padding: 6px; /* Padding around widget area */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 0.25rem; /* Rounded corners */
+}
+
+.widget {
+    margin-bottom: 1rem; /* Space between widgets */
+}
+
+.widget-title {
+    font-size: 1.25rem; /* Widget title font size */
+    margin-bottom: 1rem; /* Space below widget title */
+}
+
+.wp-block-pages-list__item,
+.wp-block-categories-list .cat-item {
+    margin-bottom: 0.5rem; /* Space between list items */
+    list-style: none; /* Remove default list style */
+}
+
+.wp-block-pages-list__item__link,
+.wp-block-categories-list .cat-item a {
+    display: block; /* Make list item links block-level */
+    /*padding: 0.75rem 1rem;*/ /* Padding around links */
+    color: #212529; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.wp-block-pages-list__item__link:hover,
+.wp-block-categories-list .cat-item a:hover {
+    background-color: #e9ecef; /* Background color on hover */
+    color: #0d6efd; /* Text color on hover */
+}
+
+
 
 

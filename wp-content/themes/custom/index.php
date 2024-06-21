@@ -51,8 +51,13 @@ so we have to call that footer like get_footer('xyz)
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Blogs</h6>
                 <h1 class="mb-5">Latest</h1>
-            </div>
+            </div> 
             <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light">
+                            <?php get_sidebar();?>
+                        </div>
+                    </div>
                 <?php 
                 while ( have_posts() ) :
                     the_post();

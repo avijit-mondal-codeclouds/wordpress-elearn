@@ -51,16 +51,33 @@ get_header();
         </div>
     </div>
     <!-- Header End -->
-	<?php 
-	/*
-	if we use the_post_thumbnail() method then it will give us image with image tag
-	*/
-	the_post_thumbnail(); ?>
-	<?php 
-	// $postImg = wp_get_attachment_image(get_post_thumbnail_id(), 'medium');
-	// print_r($postImg);
-	?>
-	<?php the_content() ; ?>
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+	
+				<div class="col-lg-3 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+						<?php get_sidebar();?>                    
+					</div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="<?php echo get_the_post_thumbnail_url();?>" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                    <h1 class="mb-4">Welcome to eLEARNING</h1>
+                    <p class="mb-4"><?php the_content() ; ?></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
 
 <?php
 // get_sidebar();

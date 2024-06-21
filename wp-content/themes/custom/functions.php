@@ -21,6 +21,7 @@ Custom Validations: You can add custom validation rules and security checks to i
 Third-Party Services: You can integrate with third-party services, APIs, and external platforms to extend the functionality of your site.
 
 */
+
 /**
  * custom functions and definitions
  *
@@ -126,16 +127,16 @@ add_theme_support( 'custom-header', [] );
 
 	// Set up the WordPress core custom background feature.
 	//enable feature image option on admin panel
-	// add_theme_support(
-	// 	'custom-background',
-	// 	apply_filters(
-	// 		'custom_custom_background_args',
-	// 		array(
-	// 			'default-color' => 'ffffff',
-	// 			'default-image' => '',
-	// 		)
-	// 	)
-	// );
+	add_theme_support(
+		'custom-background',
+		// apply_filters(
+		// 	'custom_custom_background_args',
+		// 	array(
+		// 		'default-color' => 'ffffff',
+		// 		'default-image' => '',
+		// 	)
+		// )
+	);
 
 // 	// Add theme support for selective refresh for widgets.
 // 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -169,11 +170,17 @@ add_theme_support( 'custom-header', [] );
 // }
 // add_action( 'after_setup_theme', 'custom_content_width', 0 );
 
-// /**
-//  * Register widget area.
-//  *
-//  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
-//  */
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+register_sidebar(
+	array(
+		'name'          => 'custom side',
+		'id'            => 'sidebar',
+	)
+);
 // function custom_widgets_init() {
 // 	register_sidebar(
 // 		array(
@@ -230,4 +237,12 @@ add_theme_support( 'custom-header', [] );
 // if ( defined( 'JETPACK__VERSION' ) ) {
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
+
+// function enable_excerpt_field() {
+//     add_post_type_support('post', 'excerpt');
+// }
+// add_action('init', 'enable_excerpt_field');
+
+add_post_type_support('page', 'excerpt');
+// add_post_type_support('page', 'excerpt');
 
