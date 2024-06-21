@@ -442,3 +442,107 @@
 .current_page_item a {
     color: #181d38;
 }
+
+/* Custom styles for the comment form */
+.comment-respond {
+    padding: 15px;
+}
+.comment-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.comment-form .form-control {
+    border-radius: 0.25rem;
+}
+
+.comment-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.comment-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.comment-form .form-text {
+    font-size: 0.875em;
+}
+
+.comment-form .text-muted {
+    font-size: 0.875em;
+    color: #6c757d;
+}
+
+.comment-form .text-danger {
+    color: #dc3545;
+}
+.comment-list li {
+    list-style: none;
+    /* background-color: hwb(10 67% 1%); */
+}
+/* .comment-list .comment-body {
+    background-color: hwb(10 67% 1%);
+} */
+
+/* Style the main menu items */
+/* Main menu items */
+.nav-item {
+    position: relative;
+    padding: 15px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.4s ease; /* Slower transition for color change */
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Submenu */
+.sub-menu {
+    display: none; /* Hide submenu by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 200px; /* Adjust width as needed */
+    padding: 10px;
+    margin-top: 10px; /* Adjust margin as needed */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Slower transition for opacity and transform */
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+    transform: translateY(-10px); /* Start slightly above to animate from */
+}
+
+.nav-item:hover .sub-menu {
+    display: block; /* Show submenu on hover */
+    opacity: 1; /* Fade in the submenu */
+    transform: translateY(0); /* Slide down animation */
+}
+
+.sub-menu .nav-item {
+    padding: 8px 10px;
+}
+
+.sub-menu .nav-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.4s ease; /* Slower transition for color change */
+}
+
+.sub-menu .nav-link:hover {
+    color: #007bff;
+    background-color: #f0f0f0;
+}
+
+
+

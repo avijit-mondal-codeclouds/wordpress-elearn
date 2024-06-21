@@ -119,12 +119,14 @@
                 'theme_location' => 'Primary-menu',
                 'menu_class' => 'navbar-nav'
             ]); ?> -->
-            <?php echo wp_nav_menu([
+            <?php 
+            echo wp_nav_menu([
                 'container_class' => 'navbar-nav ms-auto p-4 p-lg-0', // Unique class for the container
                 'theme_location' => 'Primary-menu',
                 'menu_class' => 'navbar-nav',
                 'add_li_class' => 'nav-item nav-link' // Custom class for <li> elements
-            ]); ?>
+            ]); 
+            ?>
             <!-- <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
