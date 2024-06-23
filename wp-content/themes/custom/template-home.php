@@ -376,11 +376,76 @@ get_header();
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">News</h6>
+                <h1 class="mb-5">Categories!</h1>
+            </div>
+            <ul class="list-group list-group-horizontal-xxl">
+                <?php 
+                $terms = get_terms([
+                    'taxonomy' => 'news_category',
+                    // 'number'       => 1, // Number of terms to retrieve
+                    'hide_empty'   => false, // Hide terms with no posts (default is true)
+                    'orderby'      => 'name', // Order by term name, slug, or term_id (default is name)
+                    'order'        => 'DESC', // Sort terms in ascending or descending order (default is ASC)
+                ]);
+                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                    foreach ( $terms as $term ) {
+                        // echo '<p>' . $term->name . '</p>'; // Output the term name
+                        if (function_exists('get_wp_term_image'))
+                        {
+                            $meta_image = get_wp_term_image($term->term_id); 
+                            // echo $meta_image;
+                            if(empty($meta_image)){
+                                $meta_image = 'http://custom.elearn/wp-content/uploads/2024/06/11560437.png';
+                            }else{
+                                $meta_image = $meta_image;
+                            }
+                            ?>
+                            <a href="<?php echo get_category_link($term->term_id);?>"><li class="list-group-item"><img heigt="25" width="25" src="<?php echo $meta_image; ?>" class="rounded-circle" alt="...">&nbsp &nbsp<?php echo $term->name; ?></li></a>
+                            <?php
+                            //It will give category/term image url 
+                        }
+
+                    }
+                }
+                ?>
+                <!-- <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li> -->
+            </ul>
+            <hr>
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">News</h6>
+                <h1 class="mb-5">Latest!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
+            <?php 
+                    $args = array(
+                        'post_status' => 'publish',
+                        'post_type' => 'news'
+                    );
+                    $query = new WP_Query( $args );
+                    // echo "<pre>";
+                    // print_r($query);
+                    // echo "</pre>";
+                    if($query->have_posts()){
+                        while($query->have_posts()){
+                            $query->the_post();
+                            // print_r($query);
+                            ?>
+                           <div class="testimonial-item text-center">
+                                <img class="border rounded-circle p-2 mx-auto mb-3" src="<?php echo get_the_post_thumbnail_url(); ?> " style="width: 80px; height: 80px;">
+                                <h5 class="mb-0"><?php the_title();?></h5>
+                                <p><?php echo get_the_date();?></p>
+                                <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0"><?php the_excerpt(); ?></p>
+                                </div>
+                            </div>
+                       <?php
+    
+                        }
+                    }
+                ?>
+                <!-- <div class="testimonial-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="<?php echo get_template_directory_uri(); ?>/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Client Name</h5>
                     <p>Profession</p>
@@ -403,15 +468,15 @@ get_header();
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
+                </div> -->
+                <!-- <div class="testimonial-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="<?php echo get_template_directory_uri(); ?>/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Client Name</h5>
                     <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
