@@ -436,6 +436,7 @@ get_header();
                                 <img class="border rounded-circle p-2 mx-auto mb-3" src="<?php echo get_the_post_thumbnail_url(); ?> " style="width: 80px; height: 80px;">
                                 <h5 class="mb-0"><?php the_title();?></h5>
                                 <p><?php echo get_the_date();?></p>
+                                <p>Published <?php the_field('publish_date', get_the_id());?></p>
                                 <div class="testimonial-text bg-light text-center p-4">
                                 <p class="mb-0"><?php the_excerpt(); ?></p>
                                 </div>
